@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Projets</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .subscribe-button {
+
+      background-color: rgb(3, 3, 3);
+      border: none;
+      color: rgb(253, 253, 253);
+      border-radius: 50px;
+      padding: 10px 16px;
+      cursor: pointer;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 16px;
+      padding-right: 16px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .is-subscribed {
+      color: rgb(255, 255, 255) !important;
+      background-color: rgb(247, 9, 9);
+
+    }
+
+    .cost-input {
+      /* background
+      font-size: 16px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    */
+      padding: 10px;
+
+    }
+
+    .calculate-button {
+
+      background-color: green !important;
+      color: white;
+      padding: 12px 15px;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>Youtube Subscribe Button</p>
+
+  <button onclick="
+
+  Subscribe();
+  
+  " class="js-subscribe-button  subscribe-button">
+
+    Subscribe</button>
+
+  <p>Amazon Shipping Calculator</p>
+
+  <input placeholder="cost of order" class="js-cost-input cost-input">
+
+  <button onclick="
+  calculateTotal()
+  
+  " class="calculate-button">
+
+    Calculate
+  </button>
+
+  <p class="js-total-cost "></p>
+
+
+
+  <script>
+    function calculateTotal() {
+
+      const inputElement = document.querySelector('.js-cost-input');
+      let cost = Number(inputElement.value);
+
+
+      if (cost < 40) {
+
+        cost = cost + 10;
+
+
+      }
+      document.querySelector('.js-total-cost').innerHTML = `Total Cost:$${cost}`;
+    }
+    function Subscribe() {
+      const buttonElement = document.querySelector('.js-subscribe-button');
+
+      if (buttonElement.innerText === 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
+      }
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>
