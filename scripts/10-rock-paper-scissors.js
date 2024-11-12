@@ -5,7 +5,6 @@ const score = JSON.parse(localStorage.getItem("score")) || {
 };
 updatesScoreElement();
 /* if (!score) {
-        s
         score = {
                wins: 0,
                losses: 0,
