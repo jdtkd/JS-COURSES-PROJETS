@@ -15,6 +15,27 @@ updatesScoreElement();
  }
         */
 
+let isAutoPlaying = false;
+let interValId;
+  
+
+function autoPlay() {
+  if (!isAutoPlaying) {
+    interValId = setInterval(function () {
+      const playerMove = pickedComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+
+    
+  }else{
+    clearInterval(interValId);
+    isAutoPlaying = false; 
+  }
+  
+}
+     
+
 function playGame(playerMove) {
   const computerMove = pickedComputerMove();
 
