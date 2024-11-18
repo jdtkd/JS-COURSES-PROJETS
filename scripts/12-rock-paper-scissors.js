@@ -17,7 +17,6 @@ updatesScoreElement();
 
 let isAutoPlaying = false;
 let interValId;
-  
 
 function autoPlay() {
   if (!isAutoPlaying) {
@@ -26,15 +25,11 @@ function autoPlay() {
       playGame(playerMove);
     }, 1000);
     isAutoPlaying = true;
-
-    
-  }else{
+  } else {
     clearInterval(interValId);
-    isAutoPlaying = false; 
+    isAutoPlaying = false;
   }
-  
 }
-     
 
 function playGame(playerMove) {
   const computerMove = pickedComputerMove();
@@ -89,9 +84,8 @@ Computer`;
   */
 }
 function updatesScoreElement() {
-  document.querySelector(
-    ".js-score"
-  ).innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
+  document.querySelector(".js-score").innerHTML =
+    `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
 }
 
 function pickedComputerMove() {

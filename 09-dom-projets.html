@@ -1,71 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Projets</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dom Projets</title>
-</head>
+  <body>
+    <p>Youtube Subscribe Button</p>
 
-<body>
-
-  <p>Youtube Subscribe Button</p>
-
-  <button onclick="
+    <button
+      onclick="
 
   Subscribe();
   
-  " class="js-subscribe-button">
+  "
+      class="js-subscribe-button"
+    >
+      Subscribe
+    </button>
 
-    Subscribe</button>
+    <p>Amazon Shipping Calculator</p>
 
-  <p>Amazon Shipping Calculator</p>
+    <input class="js-cost-input" placeholder="cost of order" />
 
-  <input class="js-cost-input" placeholder="cost of order">
-
-  <button onclick="
+    <button
+      onclick="
   calculateTotal()
   
-  ">
+  "
+    >
+      calculate
+    </button>
 
-    calculate
-  </button>
+    <p class="js-total-cost"></p>
 
-  <p class="js-total-cost"></p>
+    <script>
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-cost-input");
+        let cost = Number(inputElement.value);
 
-
-
-  <script>
-    function calculateTotal() {
-
-      const inputElement = document.querySelector('.js-cost-input');
-      let cost = Number(inputElement.value);
-
-
-      if (cost < 40) {
-
-        cost = cost + 10;
-
-
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+        document.querySelector(".js-total-cost").innerHTML =
+          `Total Cost:$${cost}`;
       }
-      document.querySelector('.js-total-cost').innerHTML = `Total Cost:$${cost}`;
-    }
 
-    function Subscribe() {
-      const buttonElement = document.querySelector('.js-subscribe-button');
+      function Subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
 
-      if (buttonElement.innerText === 'Subscribe') {
-        buttonElement.innerHTML = 'Subscribed';
-      } else {
-        buttonElement.innerHTML = 'Subscribe';
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+        }
       }
-    }
-
-
-
-
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>

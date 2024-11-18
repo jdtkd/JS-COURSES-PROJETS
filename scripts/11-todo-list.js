@@ -17,7 +17,7 @@ function displayTodoList() {
   for (var i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
     // Destructuring assignment to destructure the properties of the object into variables.
-    const {name, dueDate} = todoObject;
+    const { name, dueDate } = todoObject;
 
     const html = `
 <div>${name}</div>
